@@ -1,0 +1,144 @@
+/* Sección principal con menos relleno vertical para reducir el alto */
+.stats-section {
+  width: 100%;
+  background-color: #888a8f;
+  color: #ffffff;
+  padding: 40px 0; /* Se redujo de 80px a 40px */
+  box-sizing: border-box;
+}
+
+/* Contenedor alineado al ancho del proyecto */
+.stats-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Encabezado centrado y más compacto */
+.stats-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 30px auto; /* Se redujo el margen inferior */
+}
+
+.stats-badge {
+  display: inline-block;
+  background-color: rgba(1, 15, 43, 0.15);
+  color: #60a5fa;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: system-ui, -apple-system, sans-serif;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.stats-title {
+  font-size: 1.8rem; /* Tamaño ligeramente ajustado */
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.stats-subtitle {
+  font-size: 0.95rem;
+  color: #000408e7;
+  line-height: 1.4;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Grid de Tarjetas */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Tarjeta individual centrada */
+.stat-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px 16px; /* Padding más compacto */
+  text-align: center; /* Alineación centrada para todo el texto */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el ícono y contenido horizontalmente */
+  justify-content: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: #2563eb;
+  box-shadow: 0 8px 20px -8px rgba(37, 99, 235, 0.3);
+}
+
+/* Ícono más grande y centrado */
+.stat-icon-wrapper {
+  width: 64px;  /* Aumentado de 48px */
+  height: 64px; /* Aumentado de 48px */
+  background-color: rgba(37, 99, 235, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+  margin-bottom: 12px;
+}
+
+.stat-icon-wrapper svg {
+  width: 36px;  /* Aumentado de 26px */
+  height: 36px; /* Aumentado de 26px */
+}
+
+/* Textos de la tarjeta */
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 4px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.stat-description {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.3;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* --- Adaptabilidad Responsive --- */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-section {
+    padding: 30px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-title {
+    font-size: 1.5rem;
+  }
+}

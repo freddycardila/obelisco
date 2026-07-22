@@ -1,0 +1,114 @@
+/* Sección principal en Azul Claro */
+.cta-section {
+  width: 100%;
+  background-color: #73b1f8; /* Azul claro suave (mismo tono que Servicios) */
+  padding: 70px 0;
+  box-sizing: border-box;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Contenedor centralizado */
+.cta-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Badge indicador */
+.cta-badge {
+    font-family: system-ui, -apple-system, sans-serif;
+  display: inline-block;
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #bfdbfe;
+}
+
+/* Título de impacto */
+.cta-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Subtítulo */
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 auto 32px auto;
+  max-width: 720px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Contenedor del Botón */
+.cta-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Botón Grande Azul Oscuro */
+.cta-btn-large {
+  background-color: #1e3a8a; /* Azul oscuro corporativo */
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 16px 42px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
+}
+
+.cta-btn-large svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+
+.cta-btn-large:hover {
+  background-color: #1d4ed8; /* Tono de hover ligeramente más vivo */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.35);
+}
+
+.cta-btn-large:hover svg {
+  transform: translateX(5px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .cta-section {
+    padding: 50px 0;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+  }
+
+  .cta-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .cta-btn-large {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 14px 28px;
+  }
+}

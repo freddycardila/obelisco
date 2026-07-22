@@ -1,0 +1,197 @@
+/* Sección principal con fondo azul claro */
+.services-section {
+  width: 100%;
+  background-color: #f0f7ff; /* Azul claro suave */
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor alineado */
+.services-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Encabezado */
+.services-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.services-badge {
+  font-family: system-ui, -apple-system, sans-serif;
+  display: inline-block;
+  background-color: #dbeafe; /* Azul claro un poco más marcado */
+  color: #1e40af; /* Azul oscuro */
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #bfdbfe;
+}
+
+.services-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.services-subtitle {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Grid de 4 tarjetas */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Tarjeta individual (Centrada) */
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center;  /* Centra los textos */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #1e40af;
+  box-shadow: 0 12px 24px -8px rgba(30, 64, 175, 0.15);
+}
+
+/* Contenedor del Ícono MÁS GRANDE */
+.service-icon-wrapper {
+  width: 64px;  /* Aumentado de 52px */
+  height: 64px; /* Aumentado de 52px */
+  background-color: #eff6ff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d4ed8;
+  margin-bottom: 20px;
+}
+
+.service-icon-wrapper svg {
+  width: 36px;  /* Aumentado de 28px */
+  height: 36px; /* Aumentado de 28px */
+}
+
+/* Título y descripción */
+.service-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.service-card-description {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Botón "Ver más" INDIVIDUAL para cada tarjeta (Azul Oscuro con Relleno y Centrado) */
+.service-btn-more {
+  width: 100%;
+  max-width: 200px;
+  background-color: #1e3a8a; /* Azul oscuro corporativo */
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 12px;
+}
+
+.service-btn-more svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.service-btn-more:hover {
+  background-color: #1d4ed8; /* Tono más brillante en hover */
+  transform: translateY(-2px);
+}
+
+.service-btn-more:hover svg {
+  transform: translateX(4px);
+}
+
+/* Footer / Botón global */
+.services-footer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* Botón "Ver todos los servicios" GLOBAL al final */
+.services-btn-all {
+  background-color: #0f172a; /* Azul muy oscuro / Slate 900 */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+}
+
+.services-btn-all:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-section {
+    padding: 40px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-title {
+    font-size: 1.8rem;
+  }
+}

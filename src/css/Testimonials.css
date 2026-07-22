@@ -1,0 +1,170 @@
+/* Sección principal con Fondo Azul Oscuro */
+.testimonials-section {
+  width: 100%;
+  background-color: #0f172a; /* Fondo azul oscuro profundo */
+  color: #ffffff;
+  padding: 70px 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.testimonials-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Encabezado */
+.testimonials-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+}
+
+.testimonials-badge {
+font-family: system-ui, -apple-system, sans-serif;
+  display: inline-block;
+  background-color: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.testimonials-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.testimonials-subtitle {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Distribución en 2 Columnas */
+.testimonials-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.testimonials-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Tarjeta estilo Comentario de Red Social */
+.testimonial-card {
+  background-color: #1e293b; /* Tarjeta un tono más claro que el fondo */
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 24px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
+}
+
+/* Header del usuario */
+.testimonial-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3b82f6;
+}
+
+.testimonial-user-info {
+  flex-grow: 1;
+}
+
+.testimonial-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.testimonial-handle {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin: 2px 0 0 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.testimonial-role {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+/* Icono de Red Social */
+.testimonial-social-icon {
+  width: 20px;
+  height: 20px;
+  color: #3b82f6;
+  opacity: 0.8;
+}
+
+.testimonial-social-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Estrellas de calificación */
+.testimonial-stars {
+  color: #f59e0b; /* Amarillo oro */
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+/* Comentario */
+.testimonial-comment {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .testimonials-columns {
+    grid-template-columns: 1fr; /* Pasa a 1 columna en tablets y móviles */
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials-section {
+    padding: 50px 0;
+  }
+
+  .testimonials-title {
+    font-size: 1.8rem;
+  }
+}

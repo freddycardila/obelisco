@@ -1,0 +1,198 @@
+/* ===== NAVBAR PRINCIPAL ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a2a6c; /* Azul oscuro */
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Contenedor interno */
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* ===== LOGO ===== */
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+/* ===== MENÚ DESKTOP ===== */
+.desktop-menu {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #93c5fd;
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #93c5fd;
+}
+
+/* ===== BOTÓN HAMBURGUESA ===== */
+.mobile-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.hamburger-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-button:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.hamburger-icon {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ===== MENÚ MÓVIL ===== */
+.mobile-menu {
+  display: none;
+  background-color: #1a2a6c;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu.open {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobile-menu-content {
+  padding: 0.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-link {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #93c5fd;
+}
+
+.mobile-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #93c5fd;
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SCROLL SUAVE ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex;
+  }
+
+  .mobile-button-container {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* ===== ACCESIBILIDAD: Reducir movimiento ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

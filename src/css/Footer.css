@@ -1,0 +1,97 @@
+/* Sección principal con fondo Azul Oscuro */
+.footer-section {
+  width: 100%;
+  background-color: #0f172a; /* Azul oscuro profundo */
+  color: #ffffff;
+  padding: 30px 0;
+  border-top: 1px solid #1e293b;
+  box-sizing: border-box;
+}
+
+/* Contenedor Flex en 3 partes alineadas */
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Marca / Nombre de la empresa */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  font-family: system-ui, -apple-system, sans-serif;
+  white-space: nowrap;
+}
+
+.footer-brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #3b82f6; /* Azul brillante */
+}
+
+.footer-brand-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-left: 4px;
+}
+
+/* Derechos reservados centrados */
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-copyright p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Redes Sociales */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-social-link {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-social-link:hover {
+  color: #ffffff;
+  background-color: #2563eb; /* Fondo azul al pasar el cursor */
+  transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+}

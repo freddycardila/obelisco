@@ -1,0 +1,126 @@
+/* Contenedor principal del Hero */
+.hero-container {
+  position: relative;
+  width: 100vw; /* Asegura el 100% del ancho de la ventana */
+  max-width: 100%; /* Evita desbordamientos o scroll horizontal */
+  min-height: calc(100vh - 30px); /* O la altura que desees darle */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 4rem; /* Margen interno para alinear el texto con el logo del Navbar */
+  box-sizing: border-box;
+  margin-top: 270px; /* Ajusta según la altura de tu Navbar */
+  /* Imagen de fondo */
+  background-image: url('../assets/Hero-1.png'); /* O la URL que estés usando */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Si tenías algún margin externo, lo quitamos */
+  margin: 0;
+}
+
+/* Capa oscura para mejorar el contraste del texto */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.85) 0%,
+    rgba(15, 23, 42, 0.6) 50%,
+    rgba(15, 23, 42, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* Contenido de texto alineado a la izquierda */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  color: #e2e8f0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Contenedor de botones */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.hero-button {
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.hero-button.primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.hero-button.primary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.hero-button.secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.hero-button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* --- Responsive design (Móviles) --- */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 0 5%;
+    min-height: 80vh;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+}
