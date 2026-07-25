@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import '../css/Services.css';
 
 interface ServiceItem {
@@ -9,6 +10,8 @@ interface ServiceItem {
 }
 
 export const Services: React.FC = () => {
+  const navigate = useNavigate();
+
   const servicesData: ServiceItem[] = [
     {
       id: 1,
@@ -60,12 +63,9 @@ export const Services: React.FC = () => {
     }
   ];
 
-  const handleServiceClick = (title: string) => {
-    alert(`Más información sobre: ${title}`);
-  };
-
+  // Redirección con useNavigate al hacer clic en el botón principal
   const handleViewAll = () => {
-    alert("Redirigiendo a catálogo completo de servicios...");
+    navigate('/servicios');
   };
 
   return (
@@ -91,16 +91,14 @@ export const Services: React.FC = () => {
               <h3 className="service-card-title">{service.title}</h3>
               <p className="service-card-description">{service.description}</p>
               
-              <button 
-                className="service-btn-more"
-                onClick={() => handleServiceClick(service.title)}
-              >
+              {/* Enlace directo a la vista de servicios */}
+              <Link to="/servicios" className="service-btn-more">
                 Ver más
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
-              </button>
+              </Link>
             </div>
           ))}
         </div>

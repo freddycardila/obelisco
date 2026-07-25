@@ -1,0 +1,343 @@
+/* Estilos Principales de la Página de Servicios */
+.services-page {
+  width: 100%;
+  background-color: #0b132b; /* Fondo base azul noche */
+  color: #f8fafc;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* --- Hero Section con Layout Dividido para la Imagen --- */
+.services-hero {
+  background: linear-gradient(180deg, #0b132b 0%, #1c2541 100%);
+  padding: 80px 20px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.services-hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.services-hero-text {
+  flex: 1;
+  max-width: 650px;
+}
+
+.services-hero-badge {
+  display: inline-block;
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.services-hero-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+}
+
+.services-hero-subtitle {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.services-hero-image-wrapper {
+  flex: 1;
+  max-width: 550px;
+  position: relative;
+}
+
+.services-hero-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2e3a59;
+}
+
+/* --- Grid de Servicios --- */
+.services-grid-section {
+  padding: 80px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.services-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.service-card-item {
+  background-color: #1c2541;
+  border: 1px solid #2e3a59;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-item:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.service-icon-box {
+  width: 52px;
+  height: 52px;
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon-box svg {
+  width: 28px;
+  height: 28px;
+}
+
+.service-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 1px;
+}
+
+.service-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.service-card-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #60a5fa;
+  margin: 0 0 14px 0;
+  line-height: 1.4;
+}
+
+.service-card-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.service-features-list {
+  margin-top: auto;
+  border-top: 1px solid #2e3a59;
+  padding-top: 20px;
+}
+
+.service-features-heading {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.service-features-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+}
+
+.check-icon {
+  width: 18px;
+  height: 18px;
+  color: #10b981; /* Verde esmeralda para el check */
+  flex-shrink: 0;
+}
+
+/* --- Sección Proceso de Trabajo --- */
+.services-process-section {
+  background-color: #0f172a;
+  padding: 80px 20px;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+}
+
+.services-process-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.services-process-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+}
+
+.process-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 12px 0;
+}
+
+.process-main-subtitle {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.process-step-card {
+  background-color: #1c2541;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #2e3a59;
+}
+
+.process-step-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #3b82f6;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.process-step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.process-step-desc {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Banner CTA --- */
+.services-cta-banner {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-cta-container h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.services-cta-container p {
+  font-size: 1.1rem;
+  color: #bfdbfe;
+  margin: 0 0 28px 0;
+}
+
+.services-cta-btn {
+  background-color: #ffffff;
+  color: #1e3a8a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.services-cta-btn:hover {
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .services-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-hero-text {
+    max-width: 100%;
+  }
+
+  .services-hero-image-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .services-hero-img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero-title {
+    font-size: 2rem;
+  }
+
+  .services-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .process-main-title {
+    font-size: 1.75rem;
+  }
+
+  .services-cta-container h2 {
+    font-size: 1.75rem;
+  }
+}

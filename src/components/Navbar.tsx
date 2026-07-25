@@ -1,41 +1,59 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../css/Navbar.css';
+import logoAzul from "../assets/logo-removebg-preview.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
 
+  // 1. Cambiamos la ruta de Proyectos a '/proyectos' e isRoute a true
   const menuItems = [
-    { name: 'Inicio', href: '#inicio', id: 'inicio' },
-    { name: 'Servicios', href: '#servicios', id: 'servicios' },
-    { name: 'Proyectos', href: '#proyectos', id: 'proyectos' },
-    { name: 'Nosotros', href: '#nosotros', id: 'nosotros' },
-    { name: 'Contacto', href: '#contacto', id: 'contacto' },
+    { name: 'Inicio', path: '/#inicio', id: 'inicio', isRoute: false },
+    { name: 'Servicios', path: '/servicios', id: 'servicios', isRoute: true },
+    { name: 'Proyectos', path: '/proyectos', id: 'proyectos', isRoute: true },
+    { name: 'Nosotros', path: '/#nosotros', id: 'nosotros', isRoute: false },
+    { name: 'Contacto', path: '/#contacto', id: 'contacto', isRoute: false },
   ];
 
-  // Detectar sección activa al hacer scroll
+  // 2. Manejo dinámico según la ruta
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.4,
-        rootMargin: '-80px 0px -80px 0px',
-      }
-    );
+    // Si estamos en las rutas independientes, marcamos su respectivo ítem como activo
+    if (location.pathname === '/servicios') {
+      setActiveSection('servicios');
+      return;
+    }
 
-    sections.forEach((section) => observer.observe(section));
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
+    if (location.pathname === '/proyectos') {
+      setActiveSection('proyectos');
+      return;
+    }
+
+    // Si estamos en la raíz '/', detectamos el scroll
+    if (location.pathname === '/') {
+      const sections = document.querySelectorAll('section[id]');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(entry.target.id);
+            }
+          });
+        },
+        {
+          threshold: 0.4,
+          rootMargin: '-80px 0px -80px 0px',
+        }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+      return () => {
+        sections.forEach((section) => observer.unobserve(section));
+      };
+    }
+  }, [location.pathname]);
 
   const handleLinkClick = (id: string) => {
     setActiveSection(id);
@@ -43,31 +61,28 @@ const Navbar = () => {
   };
 
   return (
-    <nav 
-      className="navbar"
-      aria-label="Navegación principal"
-    >
+    <nav className="navbar" aria-label="Navegación principal">
       <div className="navbar-container">
-        {/* Logo - Espacio para tu logo */}
+        {/* Logo integrado en el Link */}
         <div className="logo-container">
-          <a href="#inicio" className="logo">
-            {/* Aquí va tu logo */}
+          <Link to="/" className="logo" onClick={() => handleLinkClick('inicio')}>
+            <img src={logoAzul} alt="Logo Obelisco" className="logo-image" />
             <span className="logo-text">Obelisco soluciones informáticas</span>
-          </a>
+          </Link>
         </div>
 
         {/* Menú Desktop */}
         <div className="desktop-menu">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={item.href}
+              to={item.path}
               onClick={() => handleLinkClick(item.id)}
               className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
               aria-current={activeSection === item.id ? 'page' : undefined}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -115,15 +130,15 @@ const Navbar = () => {
       >
         <div className="mobile-menu-content">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={item.href}
+              to={item.path}
               onClick={() => handleLinkClick(item.id)}
               className={`mobile-link ${activeSection === item.id ? 'active' : ''}`}
               role="menuitem"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

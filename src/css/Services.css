@@ -1,5 +1,6 @@
 /* Sección principal con fondo azul claro */
 .services-section {
+  font-family: system-ui, -apple-system, sans-serif;
   width: 100%;
   background-color: #f0f7ff; /* Azul claro suave */
   padding: 60px 0;
